@@ -1,0 +1,13 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/user/Documents/Magical_Iterators_B'
+clang++-14 -std=c++2a -Werror -Wsign-conversion -Isources --compile TestRunner.cpp -o TestRunner.o
+clang++-14 -std=c++2a -Werror -Wsign-conversion -Isources --compile StudentTest1.cpp -o StudentTest1.o
+clang++-14 -std=c++2a -Werror -Wsign-conversion -Isources --compile sources/AscendingIterator.cpp -o objects/AscendingIterator.o
+clang++-14 -std=c++2a -Werror -Wsign-conversion -Isources --compile sources/Iterator.cpp -o objects/Iterator.o
+clang++-14 -std=c++2a -Werror -Wsign-conversion -Isources --compile sources/LinkedList.cpp -o objects/LinkedList.o
+clang++-14 -std=c++2a -Werror -Wsign-conversion -Isources --compile sources/MagicalContainer.cpp -o objects/MagicalContainer.o
+clang++-14 -std=c++2a -Werror -Wsign-conversion -Isources --compile sources/PrimeIterator.cpp -o objects/PrimeIterator.o
+clang++-14 -std=c++2a -Werror -Wsign-conversion -Isources --compile sources/SideCrossIterator.cpp -o objects/SideCrossIterator.o
+clang++-14 -std=c++2a -Werror -Wsign-conversion -Isources TestRunner.o StudentTest1.o objects/AscendingIterator.o objects/Iterator.o objects/LinkedList.o objects/MagicalContainer.o objects/PrimeIterator.o objects/SideCrossIterator.o -o test
+make: Leaving directory '/home/user/Documents/Magical_Iterators_B'
+ 
