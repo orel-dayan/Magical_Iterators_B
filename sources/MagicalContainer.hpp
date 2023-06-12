@@ -18,7 +18,7 @@ namespace ariel
 		LinkedList m_list;
 
 	public:
-		MagicalContainer(){}; // default constructor
+		MagicalContainer() {}; // default constructor
 
 		// Checks if a given number is prime
 		static bool isPrime(int &num);

@@ -78,7 +78,7 @@ namespace ariel
 
 		if (current->m_isPrime)
 		{ // if the node is prime, remove it from the prime list
-			 removePrimesNumbers(current);
+			removePrimesNumbers(current);
 		}
 
 		if (current == m_head)
@@ -144,8 +144,10 @@ namespace ariel
 
 	void LinkedList::addPrime(int num)
 	{
+		// Create a new node with the given number
 		Node *node = new Node(num, true, nullptr, nullptr, nullptr, nullptr, nullptr);
 
+		// If the list is empty or there are no prime numbers yet, add the node as the first prime number
 		if (m_head == nullptr || m_Phead == nullptr)
 		{
 			m_Phead = node;
@@ -154,6 +156,7 @@ namespace ariel
 			return;
 		}
 
+		// If the given number is smaller than the first prime number, insert the node at the beginning
 		if (m_Phead->m_data > num)
 		{
 			node->m_nextPrimeIter = m_Phead;
@@ -163,18 +166,21 @@ namespace ariel
 			return;
 		}
 
+		// Iterate through the prime numbers until we find the correct position to insert the new node
 		Node *temp = m_Phead;
-		while (temp->m_nextPrimeIter != m_tail && temp->m_nextPrimeIter->m_data <= num)
+		while (temp->m_nextPrimeIter != m_tail && temp->m_nextPrimeIter->m_data < num)
 		{
 			temp = temp->m_nextPrimeIter;
 		}
 
-		if (temp->m_data == num)
+		// If the given number is already in the list, delete the new node and return
+		if (temp->m_data == num || (temp->m_nextPrimeIter != m_tail && temp->m_nextPrimeIter->m_data == num))
 		{
 			delete node;
 			return;
 		}
 
+		// Insert the new node in the correct position
 		node->m_nextPrimeIter = temp->m_nextPrimeIter;
 		node->m_prev = temp;
 		if (temp->m_nextPrimeIter != m_tail)
@@ -183,6 +189,7 @@ namespace ariel
 		}
 		temp->m_nextPrimeIter = node;
 
+		// Add the new node to the main list
 		addToList(node);
 	}
 

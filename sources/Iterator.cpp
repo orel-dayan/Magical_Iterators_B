@@ -4,7 +4,7 @@ namespace ariel
 
 	void Iterator::checkType(const Iterator &other) const
 	{
-		if (typeid(*this) != typeid(other))
+		if (typeid(*this) != typeid(other)) // if the types are different
 		{
 			throw std::runtime_error("Error -Cant compare or assign iterators of different types");
 		}
