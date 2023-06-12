@@ -10,26 +10,27 @@ namespace ariel
 		int m_data;
 		bool m_isPrime;
 		int m_index;
-		Node *m_nextAccendingIter;
-		Node *m_nextPrimeIter;
-		Node *m_nextSideCrossIter;
-		Node *m_prevPrimeIter;
-		Node *m_prev;
 
-		Node(int number, bool isPrime, Node *nextAsc, Node *nextPrime, Node *nextCross, Node *previous,
-			 Node *previousPrime)
-			: m_data(number), m_isPrime(isPrime), m_index(0), m_nextAccendingIter(nextAsc), m_nextPrimeIter(nextPrime),
-			  m_nextSideCrossIter(nextCross),
-			  m_prev(previous), m_prevPrimeIter(previousPrime){};
+		Node *m_nextAccendingIter; // iterator for the accending order
+		Node *m_nextPrimeIter; // iterator for the prime numbers
+		Node *m_nextSideCrossIter; // iterator for the side cross order
+		Node *m_prevPrimeIter; // iterator for the prime numbers
+		Node *m_prev; // iterator for the accending order
+
+		Node(int number, bool isPrime, Node *nacceding, Node *nprime, Node *ncross, Node *prev,
+			 Node *prevprime)
+			: m_data(number), m_isPrime(isPrime), m_index(0), m_nextAccendingIter(nacceding), m_nextPrimeIter(nprime),
+			  m_nextSideCrossIter(ncross),
+			  m_prev(prev), m_prevPrimeIter(prevprime){};
 	};
 
 	class LinkedList
 	{
 	private:
-		Node *m_head;
+		Node *m_head; // head
 		Node *m_Phead; // Prime head
-		Node *m_tail;
-		int m_size;
+		Node *m_tail; // tail
+		int m_size; // size of the list
 
 	public:
 		LinkedList() : m_head(nullptr), m_Phead(nullptr),
