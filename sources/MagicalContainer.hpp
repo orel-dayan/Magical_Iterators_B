@@ -55,6 +55,8 @@ namespace ariel
 	public:
 		virtual ~Iterator() = default; // destructor
 
+
+
 		Iterator &operator=(const Iterator &other); // assignment operator
 
 		MagicalContainer &getContainer() const; // returns the container
@@ -106,6 +108,7 @@ namespace ariel
 		SideCrossIterator(MagicalContainer &container) : Iterator(container, container.m_list.getHead()){}; // default constructor
 
 		SideCrossIterator(const SideCrossIterator &other) : Iterator(other.m_container, other.m_current){}; // copy constructor
+
 
 		int operator*();
 

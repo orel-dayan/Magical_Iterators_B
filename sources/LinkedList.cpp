@@ -30,19 +30,19 @@ namespace ariel
 
 			while (current != m_tail && current->m_data <= node->m_data)
 			{
-				if (current->m_data == node->m_data)
+				if (current->m_data == node->m_data) // if the number already exists, delete the new node and return
 				{
 					delete node;
 					return;
 				}
 				previous = current;
-				current = current->m_nextAccendingIter;
+				current = current->m_nextAccendingIter; // iterate through the list until we find the correct position to insert the new node
 			}
 
 			node->m_nextAccendingIter = current;
 			node->m_prev = previous;
 
-			if (previous != nullptr)
+			if (previous != nullptr) 
 			{
 				previous->m_nextAccendingIter = node;
 			}
