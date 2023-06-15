@@ -46,6 +46,8 @@ namespace ariel
 
 		void removePrimesNumbers(Node *node); // remove a prime number from the list
 
+		~LinkedList() = default;
+
 		Node *getPhead() const
 		{
 			return m_Phead;
