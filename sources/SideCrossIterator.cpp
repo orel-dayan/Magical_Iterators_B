@@ -19,7 +19,7 @@ namespace ariel
 		if (m_container.size() == 0)
 			throw std::runtime_error("Error - Out of range");
 
-		if (*this == this->end())
+		if (*this == this->end()) // if the iterator is at the end
 			throw std::runtime_error("Error - Out of range");
 
 		if (m_current == nullptr)
